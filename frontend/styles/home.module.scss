@@ -1,0 +1,44 @@
+.container{
+
+    color: red;
+
+}
+
+.containerCenter{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.login{
+    margin-top: 2rem;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+
+
+    form{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    form button{
+        height: 32px;
+        font-size: 1rem;
+    }
+}
+
+.text{
+    margin-top: 1rem;
+    color: yellow;
+    cursor: pointer;
+    text-decoration-line: underline;
+}
+

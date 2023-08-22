@@ -1,0 +1,31 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "18.15.7",
+    "@types/react": "^18.0.29",
+    "@types/react-dom": "18.0.11",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.1",
+    "i": "^0.3.7",
+    "jwt-decode": "^3.1.2",
+    "next": "13.2.4",
+    "nookies": "^2.5.2",
+    "npm": "^9.8.0",
+    "powerbi-client": "^2.11.0",
+    "powerbi-client-react": "^1.4.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.14.2",
+    "sass": "^1.60.0",
+    "typescript": "5.0.2"
+  }
+}
