@@ -1,11 +1,8 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
-import { models } from 'powerbi-client';
-import { EmbedProps, PowerBIEmbed } from 'powerbi-client-react';
 import styles from '../../../styles/powerbi.module.scss';
 
-
-
+const PowerBIEmbed = dynamic(() => import('powerbi-client-react').then((m) => m.PowerBIEmbed), { ssr: false });
 
 interface DynamicPowerBIProps {
   tokenDataProps: {
@@ -18,12 +15,16 @@ interface DynamicPowerBIProps {
 const DynamicPowerBIComponent: React.FC<DynamicPowerBIProps> = ({
   tokenDataProps,
 }) => {
+  if (typeof window === 'undefined') {
+    return <p>Carregando...</p>; // Avoid running Power BI code on the server
+  }
+
   return (
     <PowerBIEmbed
       embedConfig={{
         type: 'report',
-        tokenType: models.TokenType.Embed,
         accessToken: tokenDataProps.accessToken,
+        tokenType: 1,
         embedUrl: tokenDataProps.embedUrl,
         id: tokenDataProps.reportId,
         settings: {
@@ -36,7 +37,7 @@ const DynamicPowerBIComponent: React.FC<DynamicPowerBIProps> = ({
               visible: false,
             }
           },
-          background: models.BackgroundType.Default,
+          background: 0,
         }
       }}
       cssClassName={styles.pbiContainer}
