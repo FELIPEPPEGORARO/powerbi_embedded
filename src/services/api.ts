@@ -9,7 +9,7 @@ export function setupAPICliente(ctx = undefined){
     let cookies = parseCookies(ctx);
 
     const api = axios.create({
-        baseURL: 'http://localhost:3333',
+        baseURL: 'https://powerbi-embbeded-seventh.onrender.com',
         headers: { 
             Authorization: `Bearer ${cookies['@nexauth.token']}`
         }
